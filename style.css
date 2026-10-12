@@ -1271,3 +1271,102 @@
     .wingR { transform-origin: 12% 60%; animation: flapR 2.6s ease-in-out infinite; }
     @keyframes flapL { 0%,100%{ transform:rotate(0deg); } 50%{ transform:rotate(-12deg); } }
     @keyframes flapR { 0%,100%{ transform:rotate(0deg); } 50%{ transform:rotate(12deg); } }
+
+/* ============================
+   MOBILE RESPONSIVE FIXES
+============================ */
+@media (max-width: 768px) {
+  /* Archery bow mobile fix */
+  .archery-box {
+    left: -40px !important;
+    top: 260px !important;
+    width: clamp(90px, 22vw, 130px) !important;
+  }
+  
+  .scene.active .archery-box {
+    animation: bowFlyInMobile 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards 0.3s !important;
+  }
+  
+  @keyframes bowFlyInMobile {
+    0% { transform: translate(-100px, 80px) rotate(0deg); opacity: 0; }
+    100% { transform: translate(0, 0) rotate(58deg); opacity: 1; }
+  }
+  
+  /* Archery wrap */
+  .archery-wrap {
+    height: 380px !important;
+    padding: 0 10px 10px 10px !important;
+  }
+  
+  /* Gift box */
+  .gift-box {
+    width: clamp(110px, 30vw, 150px) !important;
+  }
+  
+  /* Target heart */
+  .target-heart-svg {
+    width: clamp(70px, 20vw, 100px) !important;
+    height: clamp(70px, 20vw, 100px) !important;
+  }
+  
+  /* Text sizes */
+  .gift-headline {
+    font-size: clamp(24px, 7vw, 40px) !important;
+  }
+  
+  .hb-main {
+    font-size: clamp(32px, 9vw, 60px) !important;
+  }
+  
+  .hb-name {
+    font-size: clamp(48px, 14vw, 90px) !important;
+  }
+  
+  /* Balloon bow */
+  .balloon-bow-wrap {
+    bottom: 20px !important;
+    width: 55px !important;
+    height: 55px !important;
+    margin-left: -27px !important;
+  }
+  
+  /* Balloons */
+  .balloon-oval {
+    width: clamp(45px, 12vw, 65px) !important;
+    height: clamp(60px, 16vw, 85px) !important;
+  }
+  
+  /* Letter card */
+  .letter-card {
+    padding: 18px 16px !important;
+    max-height: 92vh !important;
+  }
+  
+  /* Reason card */
+  .reason-card {
+    padding: 14px 20px !important;
+    min-height: 90px !important;
+  }
+  
+  /* Wishes card */
+  .wishes-card {
+    padding: 22px 20px !important;
+  }
+  
+  /* Scene padding */
+  .scene {
+    padding: 20px 12px !important;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .archery-box {
+    left: -30px !important;
+    width: 90px !important;
+  }
+  
+  .gift-box {
+    width: 100px !important;
+  }
+}
