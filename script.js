@@ -717,15 +717,22 @@ const TOTAL_SCENES = 8;
   ];
 
   function goToScene(n) {
-    if (n < 0 || n >= TOTAL_SCENES) return;
-    if (sceneTimer) clearTimeout(sceneTimer);
-    if (n !== 7) stopGrandFinaleAmbientLoop();
+  if (n < 0 || n >= TOTAL_SCENES) return;
+  if (sceneTimer) clearTimeout(sceneTimer);
+  if (n !== 7) stopGrandFinaleAmbientLoop();
 
-    scenes[currentScene].classList.remove('active');
-    currentScene = n;
-    scenes[currentScene].classList.add('active');
+  // 🎵 Music start karo (pehli baar)
+  const bgMusic = document.getElementById('bgMusic');
+  if (bgMusic && bgMusic.paused) {
+    bgMusic.volume = 0.6;
+    bgMusic.play().catch(() => {});
+  }
 
-    animateSceneText(n);
+  scenes[currentScene].classList.remove('active');
+  currentScene = n;
+  scenes[currentScene].classList.add('active');
+
+  animateSceneText(n);
   }
 
   function animateSceneText(n) {
